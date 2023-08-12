@@ -738,6 +738,24 @@ int main() {
         position -= NUM_ELEMENTS;
       }
       break;
+          case 'a':
+      position--;
+      break;
+    case 'd':
+      position++;
+      break;
+    case 'w':
+      position -= TABLE_WIDTH;
+      if (position < 0) {
+        position += NUM_ELEMENTS;
+      }
+      break;
+    case 's':
+      position += TABLE_WIDTH;
+      if (position >= NUM_ELEMENTS) {
+        position -= NUM_ELEMENTS;
+      }
+      break;
     case 'q':
     case 'Q':
       endwin();
