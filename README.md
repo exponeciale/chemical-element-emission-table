@@ -4,7 +4,7 @@ Navigate in the interactive table with the arrow keys ('W', 'A', 'S' or 'D') and
 
 The spectra were obtained using the Rydberg formula extended to any hydrogen-like atom, i.e. considering only one electron in the outermost orbital of the given atom.  
 Rₘ = R∞/1+mₑ/M  
-Rₘ is the Rydberg constant for a given atom with one electron and intrinsic mass 'M'.  
+Rₘ is the Rydberg adjusted constant for a given atom with one electron and intrinsic mass 'M'.  
 mₑ is the mass of the electron.  
 R∞ = 1.096776E⁷ m⁻¹  
 M is the mass of its atomic nucleus  
