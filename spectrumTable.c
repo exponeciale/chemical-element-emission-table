@@ -38,7 +38,7 @@ Element;
 void calculateQuantityVisibleResults(double Rinf, double me, double massaNucleoAtual, int numeroAtomico, int * resultadosValidos);
 void calcularCor(RGB * cores, int totalCores, int indiceAtual, float saturacao, float luminosidade);
 
-// FunÁ„o para calcular a constante de Rydberg ajustada (R?)
+// Fun√ß√£o para calcular a constante de Rydberg ajustada (R?)
 double constanteRydbergAjustada(double Rinf, double me, double M) {
   return Rinf / (1 + me / M);
 }
@@ -56,14 +56,14 @@ int main() {
   float saturacao = 1.0;
   float luminosidade = 0.3;
   int x, y; // coordenadas do caractere
-  int raio = 0; // raio do cÌrculo
-  int centroX, centroY; // coordenadas do centro do cÌrculo
-  double angulo = 0.0; // ‚ngulo inicial
+  int raio = 0; // raio do c√≠rculo
+  int centroX, centroY; // coordenadas do centro do c√≠rculo
+  double angulo = 0.0; // √¢ngulo inicial
 
   initscr();
   curs_set(0);
   keypad(stdscr, TRUE);
-  // Definir cores personalizadas para destaque e n„o destaque
+  // Definir cores personalizadas para destaque e n√£o destaque
   start_color();
   init_pair(1, COLOR_BLACK, COLOR_WHITE);
   init_pair(2, COLOR_WHITE, COLOR_BLACK);
@@ -77,14 +77,14 @@ int main() {
   init_pair(10, 198, COLOR_BLACK);
   init_pair(11, 78, COLOR_BLACK);
 
-  // Habilitar a leitura de teclado n„o bloqueante
+  // Habilitar a leitura de teclado n√£o bloqueante
   nodelay(stdscr, TRUE);
   timeout(0);
-  // Obter as dimensıes da tela
+  // Obter as dimens√µes da tela
   int maxX, maxY;
   getmaxyx(stdscr, maxY, maxX);
 
-  // Calcular as coordenadas do centro do cÌrculo
+  // Calcular as coordenadas do centro do c√≠rculo
   centroX = 17;
   centroY = 17;
 
@@ -95,124 +95,124 @@ int main() {
   double me = 9.10938356E-31;
 
   double massaNucleo[] = {
-    1.67262192E-27, // HidrogÍnio (Z = 1)
-    6.6464764E-27, // HÈlio (Z = 2)
-    1.675E-27, // LÌtio (Z = 3)
-    2.466E-27, // BerÌlio (Z = 4)
+    1.67262192E-27, // Hidrog√™nio (Z = 1)
+    6.6464764E-27, // H√©lio (Z = 2)
+    1.675E-27, // L√≠tio (Z = 3)
+    2.466E-27, // Ber√≠lio (Z = 4)
     3.74E-27, // Boro (Z = 5)
     5.168E-27, // Carbono (Z = 6)
-    6.646E-27, // NitrogÍnio (Z = 7)
-    9.389E-27, // OxigÍnio (Z = 8)
-    1.166E-26, // Fl˙or (Z = 9)
-    1.503E-26, // NeÙnio (Z = 10)
-    1.75E-26, // SÛdio (Z = 11)
-    2.018E-26, // MagnÈsio (Z = 12)
-    2.307E-26, // AlumÌnio (Z = 13)
-    2.617E-26, // SilÌcio (Z = 14)
-    2.948E-26, // FÛsforo (Z = 15)
+    6.646E-27, // Nitrog√™nio (Z = 7)
+    9.389E-27, // Oxig√™nio (Z = 8)
+    1.166E-26, // Fl√∫or (Z = 9)
+    1.503E-26, // Ne√¥nio (Z = 10)
+    1.75E-26, // S√≥dio (Z = 11)
+    2.018E-26, // Magn√©sio (Z = 12)
+    2.307E-26, // Alum√≠nio (Z = 13)
+    2.617E-26, // Sil√≠cio (Z = 14)
+    2.948E-26, // F√≥sforo (Z = 15)
     3.301E-26, // Enxofre (Z = 16)
     3.675E-26, // Cloro (Z = 17)
-    4.071E-26, // ArgÙnio (Z = 18)
-    4.489E-26, // Pot·ssio (Z = 19)
-    4.927E-26, // C·lcio (Z = 20)
-    5.387E-26, // Esc‚ndio (Z = 21)
-    5.869E-26, // Tit‚nio (Z = 22)
-    6.371E-26, // Van·dio (Z = 23)
+    4.071E-26, // Arg√¥nio (Z = 18)
+    4.489E-26, // Pot√°ssio (Z = 19)
+    4.927E-26, // C√°lcio (Z = 20)
+    5.387E-26, // Esc√¢ndio (Z = 21)
+    5.869E-26, // Tit√¢nio (Z = 22)
+    6.371E-26, // Van√°dio (Z = 23)
     6.895E-26, // Cromo (Z = 24)
-    7.44E-26, // ManganÍs (Z = 25)
+    7.44E-26, // Mangan√™s (Z = 25)
     8.006E-26, // Ferro (Z = 26)
     8.593E-26, // Cobalto (Z = 27)
-    9.201E-26, // NÌquel (Z = 28)
+    9.201E-26, // N√≠quel (Z = 28)
     9.83E-26, // Cobre (Z = 29)
     1.048E-25, // Zinco (Z = 30)
-    1.116E-25, // G·lio (Z = 31)
-    1.186E-25, // Germ‚nio (Z = 32)
-    1.258E-25, // ArsÍnio (Z = 33)
-    1.331E-25, // SelÍnio (Z = 34)
+    1.116E-25, // G√°lio (Z = 31)
+    1.186E-25, // Germ√¢nio (Z = 32)
+    1.258E-25, // Ars√™nio (Z = 33)
+    1.331E-25, // Sel√™nio (Z = 34)
     1.407E-25, // Bromo (Z = 35)
-    1.484E-25, // CriptÙnio (Z = 36)
-    1.564E-25, // RubÌdio (Z = 37)
-    1.646E-25, // EstrÙncio (Z = 38)
-    1.73E-25, // Õtrio (Z = 39)
-    1.815E-25, // ZircÙnio (Z = 40)
-    1.902E-25, // NiÛbio (Z = 41)
-    1.991E-25, // MolibdÍnio (Z = 42)
-    2.082E-25, // TecnÈcio (Z = 43)
-    2.174E-25, // RutÍnio (Z = 44)
-    2.268E-25, // RÛdio (Z = 45)
-    2.363E-25, // Pal·dio (Z = 46)
+    1.484E-25, // Cript√¥nio (Z = 36)
+    1.564E-25, // Rub√≠dio (Z = 37)
+    1.646E-25, // Estr√¥ncio (Z = 38)
+    1.73E-25, // √çtrio (Z = 39)
+    1.815E-25, // Zirc√¥nio (Z = 40)
+    1.902E-25, // Ni√≥bio (Z = 41)
+    1.991E-25, // Molibd√™nio (Z = 42)
+    2.082E-25, // Tecn√©cio (Z = 43)
+    2.174E-25, // Rut√™nio (Z = 44)
+    2.268E-25, // R√≥dio (Z = 45)
+    2.363E-25, // Pal√°dio (Z = 46)
     2.461E-25, // Prata (Z = 47)
-    2.56E-25, // C·dmio (Z = 48)
-    2.66E-25, // Õndio (Z = 49)
+    2.56E-25, // C√°dmio (Z = 48)
+    2.66E-25, // √çndio (Z = 49)
     2.763E-25, // Estanho (Z = 50)
-    2.867E-25, // AntimÙnio (Z = 51)
-    2.973E-25, // Tel˙rio (Z = 52)
+    2.867E-25, // Antim√¥nio (Z = 51)
+    2.973E-25, // Tel√∫rio (Z = 52)
     3.08E-25, // Iodo (Z = 53)
-    3.189E-25, // XenÙnio (Z = 54)
-    3.3E-25, // CÈsio (Z = 55)
-    3.413E-25, // B·rio (Z = 56)
-    3.528E-25, // Lant‚nio (Z = 57)
-    3.645E-25, // CÈrio (Z = 58)
-    3.764E-25, // PraseodÌmio (Z = 59)
-    3.885E-25, // NeodÌmio (Z = 60)
-    4.008E-25, // PromÈcio (Z = 61)
-    4.133E-25, // Sam·rio (Z = 62)
-    4.26E-25, // EurÛpio (Z = 63)
-    4.389E-25, // GadolÌnio (Z = 64)
-    4.52E-25, // TÈrbio (Z = 65)
-    4.653E-25, // DisprÛsio (Z = 66)
-    4.788E-25, // HÛlmio (Z = 67)
-    4.926E-25, // …rbio (Z = 68)
-    5.065E-25, // T˙lio (Z = 69)
-    5.207E-25, // ItÈrbio (Z = 70)
-    5.351E-25, // LutÈcio (Z = 71)
-    5.496E-25, // H·fnio (Z = 72)
-    5.644E-25, // T‚ntalo (Z = 73)
-    5.793E-25, // TungstÍnio (Z = 74)
-    5.945E-25, // RÍnio (Z = 75)
-    6.098E-25, // ”smio (Z = 76)
-    6.254E-25, // IrÌdio (Z = 77)
+    3.189E-25, // Xen√¥nio (Z = 54)
+    3.3E-25, // C√©sio (Z = 55)
+    3.413E-25, // B√°rio (Z = 56)
+    3.528E-25, // Lant√¢nio (Z = 57)
+    3.645E-25, // C√©rio (Z = 58)
+    3.764E-25, // Praseod√≠mio (Z = 59)
+    3.885E-25, // Neod√≠mio (Z = 60)
+    4.008E-25, // Prom√©cio (Z = 61)
+    4.133E-25, // Sam√°rio (Z = 62)
+    4.26E-25, // Eur√≥pio (Z = 63)
+    4.389E-25, // Gadol√≠nio (Z = 64)
+    4.52E-25, // T√©rbio (Z = 65)
+    4.653E-25, // Dispr√≥sio (Z = 66)
+    4.788E-25, // H√≥lmio (Z = 67)
+    4.926E-25, // √ârbio (Z = 68)
+    5.065E-25, // T√∫lio (Z = 69)
+    5.207E-25, // It√©rbio (Z = 70)
+    5.351E-25, // Lut√©cio (Z = 71)
+    5.496E-25, // H√°fnio (Z = 72)
+    5.644E-25, // T√¢ntalo (Z = 73)
+    5.793E-25, // Tungst√™nio (Z = 74)
+    5.945E-25, // R√™nio (Z = 75)
+    6.098E-25, // √ìsmio (Z = 76)
+    6.254E-25, // Ir√≠dio (Z = 77)
     6.412E-25, // Platina (Z = 78)
     6.572E-25, // Ouro (Z = 79)
-    6.734E-25, // Merc˙rio (Z = 80)
-    6.898E-25, // T·lio (Z = 81)
+    6.734E-25, // Merc√∫rio (Z = 80)
+    6.898E-25, // T√°lio (Z = 81)
     7.065E-25, // Chumbo (Z = 82)
     7.234E-25, // Bismuto (Z = 83)
-    7.405E-25, // PolÙnio (Z = 84)
-    7.578E-25, // AstatÌnio (Z = 85)
-    7.754E-25, // RadÙnio (Z = 86)
-    7.931E-25, // Fr‚ncio (Z = 87)
-    8.111E-25, // R·dio (Z = 88)
-    8.293E-25, // ActÌnio (Z = 89)
-    8.477E-25, // TÛrio (Z = 90)
-    8.663E-25, // ProtactÌnio (Z = 91)
-    8.851E-25, // Ur‚nio (Z = 92)
-    9.041E-25, // Nept˙nio (Z = 93)
-    9.233E-25, // PlutÙnio (Z = 94)
-    9.427E-25, // AmerÌcio (Z = 95)
-    9.623E-25, // C˙rio (Z = 96)
-    9.821E-25, // BerquÈlio (Z = 97)
-    1.002E-24, // CalifÛrnio (Z = 98)
-    1.022E-24, // EinstÍnio (Z = 99)
-    1.043E-24, // FÈrmio (Z = 100)
-    1.064E-24, // MendelÈvio (Z = 101)
-    1.086E-24, // NobÈlio (Z = 102)
-    1.109E-24, // LaurÍncio (Z = 103)
-    1.133E-24, // RutherfÛrdio (Z = 104)
-    1.157E-24, // D˙bnio (Z = 105)
-    1.183E-24, // SeabÛrgio (Z = 106)
-    1.209E-24, // BÛhrio (Z = 107)
+    7.405E-25, // Pol√¥nio (Z = 84)
+    7.578E-25, // Astat√≠nio (Z = 85)
+    7.754E-25, // Rad√¥nio (Z = 86)
+    7.931E-25, // Fr√¢ncio (Z = 87)
+    8.111E-25, // R√°dio (Z = 88)
+    8.293E-25, // Act√≠nio (Z = 89)
+    8.477E-25, // T√≥rio (Z = 90)
+    8.663E-25, // Protact√≠nio (Z = 91)
+    8.851E-25, // Ur√¢nio (Z = 92)
+    9.041E-25, // Nept√∫nio (Z = 93)
+    9.233E-25, // Plut√¥nio (Z = 94)
+    9.427E-25, // Amer√≠cio (Z = 95)
+    9.623E-25, // C√∫rio (Z = 96)
+    9.821E-25, // Berqu√©lio (Z = 97)
+    1.002E-24, // Calif√≥rnio (Z = 98)
+    1.022E-24, // Einst√™nio (Z = 99)
+    1.043E-24, // F√©rmio (Z = 100)
+    1.064E-24, // Mendel√©vio (Z = 101)
+    1.086E-24, // Nob√©lio (Z = 102)
+    1.109E-24, // Laur√™ncio (Z = 103)
+    1.133E-24, // Rutherf√≥rdio (Z = 104)
+    1.157E-24, // D√∫bnio (Z = 105)
+    1.183E-24, // Seab√≥rgio (Z = 106)
+    1.209E-24, // B√≥hrio (Z = 107)
     1.236E-24, // Hassio (Z = 108)
-    1.264E-24, // MeitnÈrio (Z = 109)
-    1.293E-24, // Darmst·dio (Z = 110)
-    1.322E-24, // RoentgÍnio (Z = 111)
-    1.353E-24, // CopernÌcio (Z = 112)
-    1.384E-24, // NihÙnio (Z = 113)
-    1.417E-24, // FlerÛvio (Z = 114)
-    1.451E-24, // MoscÛvio (Z = 115)
-    1.485E-24, // LivermÛrio (Z = 116)
+    1.264E-24, // Meitn√©rio (Z = 109)
+    1.293E-24, // Darmst√°dio (Z = 110)
+    1.322E-24, // Roentg√™nio (Z = 111)
+    1.353E-24, // Copern√≠cio (Z = 112)
+    1.384E-24, // Nih√¥nio (Z = 113)
+    1.417E-24, // Fler√≥vio (Z = 114)
+    1.451E-24, // Mosc√≥vio (Z = 115)
+    1.485E-24, // Liverm√≥rio (Z = 116)
     1.521E-24, // Tennessino (Z = 117)
-    1.557E-24, // OganessÙnio (Z = 118)
+    1.557E-24, // Oganess√¥nio (Z = 118)
   };
   int caracterSorteado[] = {
     TALLBAR
@@ -678,9 +678,10 @@ int main() {
 
       mvprintw(yCentro, xCentro, "%s", elementoSelecionado);
     }
-    mvprintw(1, 0, "N˙mero atÙmico: %d", position + 1);
+    mvprintw(20, 55, "(W)\n\t\t\t\t\t\t    (A)(S)(D)");
+    mvprintw(1, 0, "N√∫mero at√¥mico: %d", position + 1);
     int vNumAtomico = position + 1;
-    mvprintw(0, 0, "DistribuiÁ„o eletrÙnica:");
+    mvprintw(0, 0, "Distribui√ß√£o eletr√¥nica:");
     for (int i = 0; i < 4; i++) {
       mvprintw(2 + i, 0, "[%c]", i + 75);
       int limit = 2;
