@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <curses.h>
-#include <unistd.h>
 #include <string.h>
-#include <ctype.h>
 #include <math.h>
 #include <locale.h>
 #include <stdlib.h>
@@ -55,7 +53,6 @@ int main() {
   RGB cores[totalCores];
   float saturacao = 1.0;
   float luminosidade = 0.3;
-  int x, y; // coordenadas do caractere
   int raio = 0; // raio do círculo
   int centroX, centroY; // coordenadas do centro do círculo
   double angulo = 0.0; // ângulo inicial
