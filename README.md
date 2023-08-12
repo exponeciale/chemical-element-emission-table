@@ -1,6 +1,6 @@
 # Chemical-element-emission-table
-Navigate in the interactive table with the arrow keys ('W', 'A', 'S' or 'D') and obtain the electronic distribution of a given atom whit its respective emission and absorption spectra.
-![ezgif com-video-to-gif](https://github.com/exponeciale/chemical-element-emission-table/assets/132215795/aa9145ac-debb-4ddb-ad6c-ab45e65dd066)
+Navigate in the interactive table with the arrow keys ('W', 'A', 'S' or 'D') and obtain the electronic distribution of a given atom whit its respective emission and absorption spectra.  
+![ezgif com-video-to-gif (1)](https://github.com/exponeciale/chemical-element-emission-table/assets/132215795/712d578f-b411-49d0-9680-7c44090c9137)  
 
 The spectra were obtained using the Rydberg formula extended to any hydrogen-like atom, i.e. considering only one electron in the outermost orbital of the given atom.  
 Rₘ = R∞/1+mₑ/M  
